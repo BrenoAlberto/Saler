@@ -20,3 +20,5 @@ class Estate(db.Model):
     finality = db.Column(db.Enum('Residencial', 'Office'), nullable=True)
     estate_agency_id = db.Column(db.Integer, db.ForeignKey(
         'estate_agency.id'), nullable=False)
+    estate_agency = db.relationship(
+        "EstateAgency", backref=db.backref("estates"))
