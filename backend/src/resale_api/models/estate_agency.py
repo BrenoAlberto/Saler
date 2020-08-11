@@ -7,3 +7,4 @@ class EstateAgency(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(255), unique=True, nullable=False)
     address = db.Column(db.String(255), nullable=True)
+    estates = db.relationship('Estate', backref="estate_agency", lazy=True)
