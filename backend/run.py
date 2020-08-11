@@ -1,5 +1,6 @@
 import os
 from resale_api import create_app, db
+from resale_api.models.estate import Estate
 from resale_api.models.estate_agency import EstateAgency
 from resale_api.util.util import get_from_env
 
@@ -10,5 +11,6 @@ app = create_app(get_from_env("FLASK_ENV"))
 def shell():
     return {
         "db": db,
-        "EstateAgency": EstateAgency
+        "EstateAgency": EstateAgency,
+        "Estate": Estate
     }
